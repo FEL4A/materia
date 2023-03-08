@@ -1,0 +1,37 @@
+package Caixa;
+
+import java.util.Scanner;
+
+public class Caixa {
+
+    public static void main(String[] args) {
+
+        Scanner leia = new Scanner(System.in);
+        System.out.print("Descrição do produto: ");
+        String descricao = leia.nextLine();
+        System.out.print("Quantidade adquirida: ");
+        int quantidade = leia.nextInt();
+        System.out.print("Preço unitário: ");
+
+        double precoUnitario = leia.nextDouble();
+        double total = quantidade * precoUnitario;
+        double desconto = 0;
+        
+        if (quantidade <= 5) {
+            desconto = total * 0.02;
+        } else if (quantidade <= 10) {
+            desconto = total * 0.03;
+        } else {
+            desconto = total * 0.05;
+        }
+
+        double totalPagar = total - desconto;
+        System.out.printf("Total: R$ %.2f%n", total);
+        System.out.printf("Desconto: R$ %.2f%n", desconto);
+        System.out.printf("Total a pagar: R$ %.2f%n", totalPagar);
+
+        leia.close();
+
+    }
+
+}

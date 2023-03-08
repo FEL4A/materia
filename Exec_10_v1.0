@@ -1,0 +1,41 @@
+package Posto;
+
+import java.util.Scanner;
+
+public class Posto {
+
+    public static void main(String[] args) {
+        Scanner leia = new Scanner(System.in);
+
+        double litro, precoA = 3.79, precoG = 5.35, total = 0;
+        int combustivel;
+
+        do {
+            System.out.println("Tipo de combustível:");
+            System.out.println("1 - Álcool");
+            System.out.println("2 - Gasolina");
+            combustivel = leia.nextInt();
+        } while (combustivel != 1 && combustivel != 2);
+
+        System.out.print("Quantos litros: ");
+        litro = leia.nextDouble();
+
+        // para Álcool
+        if (litro <= 20 && combustivel == 1) {
+            total = precoA * (litro * (1 - (3 / 100.0)));
+        } else if (litro > 20 && combustivel == 1) {
+            total = precoA * (litro * (1 - (5 / 100.0)));
+        }
+
+        // para Gasolina
+        if (litro <= 20 && combustivel == 2) {
+            total = precoG * (litro * (1 - (4 / 100.0)));
+        } else if (litro > 20 && combustivel == 2) {
+            total = precoG * (litro * (1 - (6 / 100.0)));
+        }
+
+        System.out.println("Valor total a pagar: R$ " + total);
+
+        leia.close();
+    }
+}

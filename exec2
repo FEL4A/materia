@@ -1,0 +1,34 @@
+package Cinquenta;
+
+import java.util.Scanner;
+
+public class Cinquenta {
+
+    int num;
+
+    public void entrada() {
+        Scanner leia = new Scanner(System.in);
+        System.out.print("Digite um numero inteiro:");
+        num = leia.nextInt();
+    }
+
+    public void calculo() {
+        System.out.println("Positivos");
+        for (int i = 1; i <= 50; i++) {
+            System.out.println(num + i);
+        }
+        System.out.println("Negativos");
+        for (int i = 1; i <= 50; i++) {
+            System.out.println(num - i);
+        }
+
+    }
+
+    public static void main(String[] args) {
+        Cinquenta cinq = new Cinquenta();
+        cinq.entrada();
+        cinq.calculo();
+
+    }
+
+}

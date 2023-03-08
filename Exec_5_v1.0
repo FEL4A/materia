@@ -1,0 +1,37 @@
+package Idade;
+
+import java.util.Scanner;
+
+public class Idade {
+
+    int ano;
+    int mes;
+    int dia;
+    int calc1;
+    int calc2;
+    int calc3;
+
+    public void entrada() {
+        Scanner leia = new Scanner(System.in);
+
+        System.out.print("Qual sua idade:");
+         ano = leia.nextInt();
+        System.out.print("E Possui quantos meses:");
+         mes = leia.nextInt();
+        System.out.print("E dias:");
+         dia = leia.nextInt();
+    }
+    
+    public void calculo(){
+        calc1 = (ano * 365);
+        calc2 = (mes * 30);
+        calc3 = (calc1 + calc2 + dia);
+        System.out.println("Sua idade em dias é:"+calc3);
+    }
+    
+      public static void main(String[] args) {
+          Idade idade = new Idade();
+          idade.entrada();
+          idade.calculo();
+      }
+}

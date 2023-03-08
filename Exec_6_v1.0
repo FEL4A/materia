@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Porcentagem;
+
+import java.util.Scanner;
+
+public class Porcentagem {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o nome do município: ");
+        String municipio = input.nextLine();
+
+        System.out.print("Digite o total de eleitores: ");
+        int totalEleitores = input.nextInt();
+
+        System.out.print("Digite o número de votos em branco: ");
+        int votosBranco = input.nextInt();
+
+        System.out.print("Digite o número de votos nulos: ");
+        int votosNulos = input.nextInt();
+
+        System.out.print("Digite o número de votos válidos: ");
+        int votosValidos = input.nextInt();
+        double porcentagemBranco = (double) votosBranco / totalEleitores * 100;
+        double porcentagemNulos = (double) votosNulos / totalEleitores * 100;
+        double porcentagemValidos = (double) votosValidos / totalEleitores * 100;
+
+        System.out.println("Município: " + municipio);
+
+        System.out.println("Votantes Totais: " + totalEleitores);
+
+        System.out.printf("Votos em branco: %d (%.2f%%)\n", votosBranco, porcentagemBranco);
+
+        System.out.printf("Votos nulos: %d (%.2f%%)\n", votosNulos, porcentagemNulos);
+
+        System.out.printf("Votos válidos: %d (%.2f%%)\n", votosValidos, porcentagemValidos);
+
+    }
+
+}

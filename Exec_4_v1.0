@@ -1,0 +1,29 @@
+package MenorNumero;
+
+import java.util.Scanner;
+
+public class MenorNumero {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Digite o primeiro número: ");
+        double numero1 = input.nextDouble();
+        System.out.print("Digite o segundo número: ");
+        double numero2 = input.nextDouble();
+        System.out.print("Digite o terceiro número: ");
+        double numero3 = input.nextDouble();
+        double menor = calcularMenor(numero1, numero2, numero3);
+        System.out.println("O menor número é: " + menor);
+    }
+
+    public static double calcularMenor(double numero1, double numero2, double numero3) {
+        double menor = numero1;
+        if (numero2 < menor) {
+            menor = numero2;
+        }
+        if (numero3 < menor) {
+            menor = numero3;
+        }
+        return menor;
+    }
+}

@@ -1,0 +1,29 @@
+package carro;
+
+import java.util.Scanner;
+
+public class Carro {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        float vendas, salariofixo, comissao, salario;
+        int carros;
+
+        System.out.print("Informe o numero de carros vendidos: ");
+        carros = sc.nextInt();
+
+        System.out.print("Informe o valor total de suas vendas: ");
+        vendas = sc.nextFloat();
+
+        System.out.print("Informe o salario fixo: ");
+        salariofixo = sc.nextFloat();
+
+        System.out.print("Informe o valor por carro vendido: ");
+        comissao = sc.nextFloat();
+
+        salario = salariofixo + (comissao * carros) + (vendas * 0.05f);
+
+        System.out.printf("Salario final do vendedor: ", salario);
+
+        sc.close();
+    }
+}
